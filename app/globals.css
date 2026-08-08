@@ -1,0 +1,58 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  color-scheme: light;
+  --primary: #193a5e;
+  --primary-foreground: #ffffff;
+  --secondary: #5a8861;
+  --secondary-foreground: #ffffff;
+  --accent: #e8d7c8;
+  --accent-foreground: #193a5e;
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --light-gray: #f6f8fa;
+  --dark-gray: #6b7280;
+  --border: #e5e7eb;
+  --muted: #9ca3af;
+  --muted-foreground: #6b7280;
+  --radius: 0.625rem;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-[#1a1a1a];
+  }
+  html {
+    @apply bg-white;
+  }
+}
+
+@layer components {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-[#193a5e] via-[#5a8861] to-[#193a5e] bg-clip-text text-transparent;
+  }
+
+  .section-spacing {
+    @apply py-20 lg:py-28;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-[#193a5e] rounded-lg hover:bg-[#1a2d47] transition-colors duration-300;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium text-[#193a5e] border-2 border-[#193a5e] rounded-lg hover:bg-[#f6f8fa] transition-colors duration-300;
+  }
+
+  .smooth-fade-in {
+    @apply opacity-0 animate-in fade-in duration-1000;
+  }
+}
